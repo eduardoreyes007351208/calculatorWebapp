@@ -17,4 +17,28 @@ body {
     height: 640px;
     background-color: #212121;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.screenContainer {
+    width: 100%;
+    flex-basis: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    width: 80%;
+    height: 60%;
+    background-color: #002db3;
+    border-radius: 5px;
+}
+
+.btnsContainer {
+    width: 100%;
+    flex-basis: 66.66%;
 }
