@@ -44,5 +44,22 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 10px;
+}
+
+.btn {
+    width: 20%;
+    height: 15%;
+    box-sizing: border-box;
+    font-size: x-large;
+    background-color: #D3D3D3;
+    border: none;
+    border-radius: 5px;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.operatorBtn {
+    background-color: #a9bfff;
 }
