@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: gray;
+}
+
+.mainDiv {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcBody {
+    width: 360px;
+    height: 640px;
+    background-color: #212121;
+    border-radius: 15px;
+}
