@@ -38,6 +38,12 @@ let divideFunction = (num1, num2) => {
 let equalFunction = (num1, num2, operation) => {
     return operation(num1, num2)
 }
+let allClear = () => {
+    value1 = 0
+    bottomScreenText.textContent = value1
+    inputArray.length = 0
+    numArray.length = 0
+}
 
 /* function to save num input */
 let numInput = (value) => {
@@ -71,12 +77,17 @@ btnContainer.addEventListener('click', (btn) => {
                 bottomScreenText.textContent = "/"
                 op = divideFunction
                 break
+            case 'clear':
+                op = allClear
+                break
             default:
                 op = equalFunction
                 break
         }
 
-        if (op != equalFunction) {
+        if (op == allClear) {
+            allClear()
+        } else if (op != equalFunction) {
             inputArray.push(value1)
             inputArray.push(op)
             value1 = 0
