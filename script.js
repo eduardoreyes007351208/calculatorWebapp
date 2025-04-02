@@ -17,6 +17,7 @@ const sixBtn = document.querySelector('#sixBtn')
 const sevenBtn = document.querySelector('#sevenBtn')
 const eightBtn = document.querySelector('#eightBtn')
 const nineBtn = document.querySelector('#nineBtn')
+let filter = '1234567890.'
 let inputArray = []
 let numArray = []
 let value1 = 0
@@ -47,11 +48,49 @@ let numInput = (value) => {
 }
 
 btnContainer.addEventListener('click', (btn) => {
-    console.log(btn.target.value)
-    if (btn.target.value != '') {
-        numInput(btn.target.value)
-        console.log(value1)
+    let btnValue = btn.target.value
+    let op = null
+    if (filter.includes(btnValue)) {
+        numInput(btnValue)
+        console.log(value1, numArray)
     } else {
-        console.log('not num')
+        switch (btnValue) {
+            case '+':
+                op = addFunction
+                break
+            case '-':
+                op = subtractFunction
+                break
+            case '*':
+                op = multiplyFunction
+                break
+            case '/':
+                op = divideFunction
+                break
+            default:
+                op = equalFunction
+                break
+        }
+
+        if (op != equalFunction) {
+            inputArray.push(value1)
+            inputArray.push(op)
+            value1 = 0
+            numArray = []
+        } else {
+            inputArray.push(value1)
+            inputArray.push(op)
+            console.log(inputArray)
+            let num1 = inputArray[0]
+            let num2 = inputArray[2]
+            let op1 = inputArray[1]
+            let equal = inputArray[3]
+            let result = equal(num1, num2, op1)
+            console.log(result)
+            value1 = 0
+            numArray=[]
+            inputArray=[]
+        }
+        
     }
 })
