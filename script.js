@@ -1,5 +1,5 @@
 const btnContainer = document.querySelector('#btnContainer')
-const screenText = document.querySelector('#screenText')
+const bottomScreenText = document.querySelector('#bottomScreenText')
 const clearBtn = document.querySelector('#clearBtn')
 const plusBtn = document.querySelector('#plusBtn')
 const minusBtn = document.querySelector('#minusBtn')
@@ -44,7 +44,7 @@ let numInput = (value) => {
     numArray.push(value)
     let temp = numArray.join('')
     value1 = parseFloat(temp)
-    screenText.textContent = value1
+    bottomScreenText.textContent = value1
 }
 
 btnContainer.addEventListener('click', (btn) => {
@@ -56,15 +56,19 @@ btnContainer.addEventListener('click', (btn) => {
     } else {
         switch (btnValue) {
             case '+':
+                bottomScreenText.textContent = '+'
                 op = addFunction
                 break
             case '-':
+                bottomScreenText.textContent = '-'
                 op = subtractFunction
                 break
             case '*':
+                bottomScreenText.textContent = "*"
                 op = multiplyFunction
                 break
             case '/':
+                bottomScreenText.textContent = "/"
                 op = divideFunction
                 break
             default:
@@ -86,6 +90,7 @@ btnContainer.addEventListener('click', (btn) => {
             let op1 = inputArray[1]
             let equal = inputArray[3]
             let result = equal(num1, num2, op1)
+            bottomScreenText.textContent = result
             console.log(result)
             value1 = 0
             numArray=[]
